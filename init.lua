@@ -841,6 +841,7 @@ require('lazy').setup({
   require 'plugins.aerial',
   require 'plugins.nvimtree',
   require 'plugins.toggleterm',
+  require 'plugins.lazygit',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
@@ -881,6 +882,7 @@ vim.o.foldlevelstart = 999
 vim.o.foldenable = true
 
 -- KEYMAP
+vim.keymap.set('n', '<leader>l', '<cmd>LazyGit<CR>')
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeFocus<CR>')
 vim.keymap.set('n', '<leader>w', '<cmd>NvimTreeClose<CR>')
 vim.keymap.set('n', '<leader>r', '<cmd>ToggleTerm<CR>')

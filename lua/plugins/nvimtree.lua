@@ -15,8 +15,21 @@ return {
       filters = {
         dotfiles = false,
       },
+      git = {
+        enable = true,
+        ignore = false, -- Show files even if in .gitignore
+      },
       auto_reload_on_write = true,
     }
+
+    -- auto open upon startup
+    vim.api.nvim_create_autocmd('VimEnter', {
+      callback = function()
+        if vim.fn.isdirectory(vim.fn.argv()[1] or '') == 1 then
+          require('nvim-tree.api').tree.open()
+        end
+      end,
+    })
   end,
 }
 
