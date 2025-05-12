@@ -881,14 +881,17 @@ vim.o.foldlevel = 999
 vim.o.foldlevelstart = 999
 vim.o.foldenable = true
 
+vim.opt.winbar = '%f %m'
+
 -- KEYMAP
 vim.keymap.set('n', '<leader>l', '<cmd>LazyGit<CR>')
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeFocus<CR>')
 vim.keymap.set('n', '<leader>w', '<cmd>NvimTreeClose<CR>')
 vim.keymap.set('n', '<leader>r', '<cmd>ToggleTerm<CR>')
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true })
-vim.keymap.set('n', '<leader>h', '<cmd>split<CR>')
+vim.keymap.set('n', '<leader>f', '<cmd>split<CR>')
 -- You probably also want to set a keymap to toggle aerial
 vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+require 'plugins.gitsigns'
